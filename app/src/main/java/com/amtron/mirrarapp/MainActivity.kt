@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
+//        This will check the Internet is Available or not
         if (NetworkUtils.isInternetAvailable(applicationContext)) {
-
 
             val repository = (application as NasaApplication).apodRepository
 
@@ -56,6 +56,8 @@ class MainActivity : AppCompatActivity() {
 
         notificationsHelper.showLoadingDialog(this)
 
+
+        // Getting the data from the view model
         apodViewModel.apoData.observe(this) {
 
             Log.d("DATA", it.toString())
